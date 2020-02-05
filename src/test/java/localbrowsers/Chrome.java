@@ -20,6 +20,7 @@ public class Chrome {
     public void chromeSetup(){
         DesiredCapabilities capabilities = DesiredCapabilities.chrome();
         ChromeOptions options = new ChromeOptions();
+	options.setHeadless(true);
         capabilities.setCapability(ChromeOptions.CAPABILITY, options);
         driver = new ChromeDriver(capabilities);
     }
