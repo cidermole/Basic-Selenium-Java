@@ -12,7 +12,7 @@ import org.testng.annotations.Test;
 /**
  * Created by andrew on 12/3/16.
  */
-@Test(groups = {"mac", "windows"})
+@Test(groups = {"mac", "windows", "linux"})
 public class Chrome {
     private WebDriver driver;
 
@@ -20,6 +20,8 @@ public class Chrome {
     public void chromeSetup(){
         DesiredCapabilities capabilities = DesiredCapabilities.chrome();
         ChromeOptions options = new ChromeOptions();
+        final String[] args = { "--no-sandbox" };
+        options.addArguments(args);
 	options.setHeadless(true);
         capabilities.setCapability(ChromeOptions.CAPABILITY, options);
         driver = new ChromeDriver(capabilities);
