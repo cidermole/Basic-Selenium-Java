@@ -42,8 +42,8 @@ public class Firefox {
 
     @Test
     public void test() {
-        driver.get("http://lazycoder.io/about.html");
-        Assert.assertEquals(driver.getTitle(), "Lazy Coder Origins");
+        driver.get("http://example.com");
+        Assert.assertEquals(driver.getTitle(), "Example Domain");
     }
 
     @AfterTest
