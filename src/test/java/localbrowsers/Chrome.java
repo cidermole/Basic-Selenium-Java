@@ -3,7 +3,6 @@ package localbrowsers;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
-import org.openqa.selenium.remote.DesiredCapabilities;
 import org.testng.Assert;
 import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
@@ -18,13 +17,11 @@ public class Chrome {
 
     @BeforeTest
     public void chromeSetup(){
-        DesiredCapabilities capabilities = DesiredCapabilities.chrome();
         ChromeOptions options = new ChromeOptions();
         final String[] args = { "--no-sandbox", "--disable-gpu" };
         options.addArguments(args);
 	options.setHeadless(true);
-        capabilities.setCapability(ChromeOptions.CAPABILITY, options);
-        driver = new ChromeDriver(capabilities);
+        driver = new ChromeDriver(options);
     }
     @Test
     public void test(){
