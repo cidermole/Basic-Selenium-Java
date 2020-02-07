@@ -20,7 +20,7 @@ public class Chrome {
     public void chromeSetup(){
         DesiredCapabilities capabilities = DesiredCapabilities.chrome();
         ChromeOptions options = new ChromeOptions();
-        final String[] args = { "--no-sandbox" };
+        final String[] args = { "--no-sandbox", "--disable-gpu" };
         options.addArguments(args);
 	options.setHeadless(true);
         capabilities.setCapability(ChromeOptions.CAPABILITY, options);
