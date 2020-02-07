@@ -26,7 +26,7 @@ public class Chrome {
     @Test
     public void test(){
         driver.get("http://example.com");
-        Assert.assertEquals(driver.getTitle(), "Example Domain");
+        Assert.assertEquals(driver.getTitle(), "Example Domain Failure");
     }
 
     @AfterTest
